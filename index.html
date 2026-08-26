@@ -57,6 +57,7 @@
       <a href="#prodotti">Prodotti</a>
       <a href="#raccolta-fondi">Raccolta fondi</a>
       <a href="#galleria">Galleria</a>
+      <a href="#video">Video</a>
       <a href="#contatti">Contatti</a>
     </nav>
     <div class="nav-social">
@@ -284,6 +285,33 @@
     </div>
   </section>
 
+  <section id="video" class="tiktok-section">
+    <div class="container">
+      <h2>I miei video</h2>
+      <p class="section-subtitle">I miei gadget raccontati da chi li ha scelti</p>
+      <div class="tiktok-grid">
+        <div class="tiktok-embed-wrap">
+          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@sissy.76/video/7666508667839089952" data-video-id="7666508667839089952" style="max-width:605px;min-width:325px;">
+            <section>
+              <a target="_blank" title="@sissy.76" href="https://www.tiktok.com/@sissy.76?refer=embed">@sissy.76</a>
+              <p><a title="amichepink🎀" target="_blank" href="https://www.tiktok.com/tag/amichepink%F0%9F%8E%80?refer=embed">#amichepink🎀</a></p>
+              <a target="_blank" title="♬ audio originale - @Sissy.76🎀" href="https://www.tiktok.com/music/audio-originale-7666508689050651424?refer=embed">♬ audio originale - @Sissy.76🎀</a>
+            </section>
+          </blockquote>
+        </div>
+        <div class="tiktok-embed-wrap">
+          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@sissy.76/video/7667182428473101600" data-video-id="7667182428473101600" style="max-width:605px;min-width:325px;">
+            <section>
+              <a target="_blank" title="@sissy.76" href="https://www.tiktok.com/@sissy.76?refer=embed">@sissy.76</a>
+              <p><a title="regalo" target="_blank" href="https://www.tiktok.com/tag/regalo?refer=embed">#regalo</a> <a title="amichepink🎀" target="_blank" href="https://www.tiktok.com/tag/amichepink%F0%9F%8E%80?refer=embed">#amichepink🎀</a></p>
+              <a target="_blank" title="♬ audio originale - @Sissy.76🎀" href="https://www.tiktok.com/music/audio-originale-7667182452250544928?refer=embed">♬ audio originale - @Sissy.76🎀</a>
+            </section>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="contatti" class="contact">
     <div class="container contact-inner">
       <h2>Contattami</h2>
@@ -401,7 +429,7 @@
     var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (reduceMotion || !('IntersectionObserver' in window)) return;
 
-    var targets = document.querySelectorAll('.product-card, .gallery-item, .about-inner, .fundraiser-inner, .contact-inner');
+    var targets = document.querySelectorAll('.product-card, .gallery-item, .about-inner, .fundraiser-inner, .contact-inner, .tiktok-grid');
     targets.forEach(function (el) { el.classList.add('reveal'); });
 
     var observer = new IntersectionObserver(function (entries) {
@@ -414,6 +442,32 @@
     }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
 
     targets.forEach(function (el) { observer.observe(el); });
+  })();
+
+  (function () {
+    var section = document.getElementById('video');
+    if (!section) return;
+
+    function loadTikTokEmbed() {
+      var script = document.createElement('script');
+      script.src = 'https://www.tiktok.com/embed.js';
+      script.async = true;
+      document.body.appendChild(script);
+    }
+
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            loadTikTokEmbed();
+            observer.disconnect();
+          }
+        });
+      }, { rootMargin: '200px' });
+      observer.observe(section);
+    } else {
+      loadTikTokEmbed();
+    }
   })();
 </script>
 

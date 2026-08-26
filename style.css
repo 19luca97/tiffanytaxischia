@@ -557,6 +557,25 @@ section h2 {
   background: rgba(255, 255, 255, 0.3);
 }
 
+/* TikTok videos */
+
+.tiktok-section {
+  background: var(--color-surface);
+}
+
+.tiktok-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.8rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.tiktok-embed-wrap {
+  display: flex;
+  justify-content: center;
+}
+
 /* Contact */
 
 .contact {
