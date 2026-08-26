@@ -164,6 +164,44 @@ a {
   background: rgba(4, 85, 81, 0.1);
 }
 
+.nav-lang {
+  display: flex;
+  gap: 0.15rem;
+  margin-left: 0.15rem;
+}
+
+.lang-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  opacity: 0.5;
+  transition: opacity 0.2s ease, background-color 0.2s ease;
+}
+
+.flag-icon {
+  width: 22px;
+  height: 15px;
+  border-radius: 3px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15);
+}
+
+.lang-link:hover {
+  opacity: 0.85;
+}
+
+.lang-link.lang-active {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.2);
+  cursor: default;
+}
+
+.site-header.scrolled .lang-link.lang-active {
+  background: rgba(4, 85, 81, 0.1);
+}
+
 /* Hero */
 
 .hero {
