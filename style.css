@@ -326,6 +326,12 @@ section h2 {
   max-width: 640px;
 }
 
+@media (min-width: 769px) {
+  .about-inner {
+    max-width: 860px;
+  }
+}
+
 .about-inner p {
   color: var(--color-text-light);
   margin-top: 1rem;
