@@ -137,12 +137,14 @@ a {
 
 .nav-social {
   display: flex;
+  flex-shrink: 0;
   gap: 0.25rem;
   margin-left: auto;
 }
 
 .nav-icon {
   display: inline-flex;
+  flex-shrink: 0;
   align-items: center;
   justify-content: center;
   width: 44px;
@@ -166,12 +168,14 @@ a {
 
 .nav-lang {
   display: flex;
+  flex-shrink: 0;
   gap: 0.15rem;
   margin-left: 0.15rem;
 }
 
 .lang-link {
   display: inline-flex;
+  flex-shrink: 0;
   align-items: center;
   justify-content: center;
   width: 40px;
@@ -182,6 +186,7 @@ a {
 }
 
 .flag-icon {
+  display: block;
   width: 22px;
   height: 15px;
   border-radius: 3px;
