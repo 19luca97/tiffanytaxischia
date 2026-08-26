@@ -343,6 +343,12 @@ section h2 {
   gap: 1.8rem;
 }
 
+@media (min-width: 960px) {
+  .product-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
 .product-card {
   background: var(--color-surface);
   border-radius: var(--radius);
@@ -394,6 +400,15 @@ section h2 {
   max-width: 640px;
 }
 
+.fundraiser-photo {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  margin: 1.6rem auto 0;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
 .fundraiser-inner > p {
   color: var(--color-text);
   margin-top: 1.2rem;
@@ -434,7 +449,7 @@ section h2 {
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(6, 1fr);
   gap: 1rem;
 }
 
@@ -578,15 +593,14 @@ section h2 {
   position: fixed;
   bottom: 1.5rem;
   right: 1.5rem;
-  display: inline-flex;
+  width: 56px;
+  height: 56px;
+  display: flex;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: center;
   background: var(--color-whatsapp);
   color: #fff;
-  font-weight: 600;
-  font-size: 0.85rem;
-  padding: 0.9rem 1.2rem;
-  border-radius: 999px;
+  border-radius: 50%;
   box-shadow: 0 6px 18px rgba(37, 211, 102, 0.45);
   z-index: 200;
   transition: transform 0.15s ease;
