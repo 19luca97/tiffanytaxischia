@@ -185,6 +185,22 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  animation: kenburns 22s ease-in-out infinite alternate;
+}
+
+@keyframes kenburns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-media img {
+    animation: none;
+  }
 }
 
 .hero-overlay {
@@ -630,6 +646,38 @@ section h2 {
 
 .whatsapp-float:hover {
   transform: scale(1.06);
+}
+
+/* Scroll reveal */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.product-card:nth-child(2) { transition-delay: 0.08s; }
+.product-card:nth-child(3) { transition-delay: 0.16s; }
+.product-card:nth-child(4) { transition-delay: 0.24s; }
+.product-card:nth-child(5) { transition-delay: 0.32s; }
+
+.gallery-item:nth-child(6n+2) { transition-delay: 0.06s; }
+.gallery-item:nth-child(6n+3) { transition-delay: 0.12s; }
+.gallery-item:nth-child(6n+4) { transition-delay: 0.18s; }
+.gallery-item:nth-child(6n+5) { transition-delay: 0.24s; }
+.gallery-item:nth-child(6n) { transition-delay: 0.3s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 /* Responsive */
